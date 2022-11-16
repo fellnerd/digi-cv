@@ -1,0 +1,4 @@
+{
+  "appService.defaultWebAppToDeploy": "/subscriptions/518a5277-e3f1-408f-aefc-e11931898d67/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/digi-cv",
+  "appService.deploySubpath": "."
+}
