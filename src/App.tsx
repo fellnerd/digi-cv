@@ -188,7 +188,7 @@ function App(props: Props) {
                 <Grid xs display="flex" justifyContent="space-between" alignItems="center">
                   <div>
                     <Typography fontSize={30} fontWeight={700}>
-                      Curriculum Vitae
+                      Lebenslauf
                     </Typography>
                     <Typography variant="subtitle1">als {state?.jobTitle}</Typography>
                     <Typography variant="subtitle1">
@@ -200,14 +200,15 @@ function App(props: Props) {
                   </div>
                 </Grid>
                 <Grid container>
-                  <Grid display="flex" marginTop={3} md={12}>
+                  <Grid width={"100%"} display="flex" marginTop={3} md={12}>
                     <InfoRoundedIcon />
                     <Typography marginLeft={2} fontWeight={700}>
                       Informationen
                     </Typography>
                   </Grid>
-                  <Grid marginTop={3} md={4}>
+                  <Grid width={"100%"} marginTop={3} md={4}>
                     <TextField
+                      fullWidth
                       id="input-with-icon-textfield"
                       label="Vor & Nachname"
                       placeholder="Dein Name"
@@ -223,8 +224,9 @@ function App(props: Props) {
                       variant="standard"
                     />
                   </Grid>
-                  <Grid marginTop={3} md={4}>
+                  <Grid width={"100%"} marginTop={3} md={4}>
                     <TextField
+                      fullWidth
                       id="input-with-icon-textfield"
                       label="Email Adresse"
                       placeholder="Deine Email"
@@ -240,8 +242,9 @@ function App(props: Props) {
                       variant="standard"
                     />
                   </Grid>
-                  <Grid marginTop={3} md={4}>
+                  <Grid width={"100%"} marginTop={3} md={4}>
                     <TextField
+                      fullWidth
                       multiline
                       id="input-with-icon-textfield"
                       label="Anschrift"
@@ -258,7 +261,7 @@ function App(props: Props) {
                       variant="standard"
                     />
                   </Grid>
-                  <Grid md={12} marginTop={3}>
+                  <Grid width={"100%"} md={12} marginTop={3}>
                     <TextField onChange={(ev) => setState((e) => (e = { ...e, description: ev.target.value }))} fullWidth placeholder="Du kannst darin auf Deine Berufserfahrung, Deine Branche oder Deine Kenntnisse eingehen. Viele Mitglieder erwähnen auch erfolgreiche Projekte oder Erfahrungen in früheren Jobs." id="standard-multiline-static" label="Wie würdest du dich in ein paar Worten beschreiben?" multiline rows={4} value={state?.description} variant="outlined" />
                   </Grid>
                 </Grid>
@@ -272,8 +275,9 @@ function App(props: Props) {
                   </Grid>
                   {state?.jobHistory.map((hist, i) => (
                     <Grid container>
-                      <Grid marginTop={4} md={2}>
+                      <Grid width={"100%"} marginTop={4} md={2}>
                         <TextField
+                          fullWidth
                           onChange={(ev) => {
                             let _state = state.jobHistory;
                             _state[i].from = ev.target.value;
@@ -285,7 +289,7 @@ function App(props: Props) {
                           defaultValue={hist.from}
                         />
                       </Grid>
-                      <Grid marginTop={4} md={2}>
+                      <Grid width={"100%"} marginTop={4} md={2}>
                         <TextField
                           onChange={(ev) => {
                             let _state = state.jobHistory;
@@ -293,12 +297,13 @@ function App(props: Props) {
                             setState((e) => (e = { ...e, jobHistory: _state }));
                           }}
                           variant="standard"
+                          fullWidth
                           id="outlined-required-to"
                           label="Bis"
                           defaultValue={hist.to}
                         />
                       </Grid>
-                      <Grid marginTop={3} md={4}>
+                      <Grid width={"100%"} marginTop={3} md={4}>
                         <TextField
                           onChange={(ev) => {
                             let _state = state.jobHistory;
@@ -312,7 +317,7 @@ function App(props: Props) {
                           defaultValue={hist.title}
                         />
                       </Grid>
-                      <Grid marginTop={3} md={3}>
+                      <Grid width={"100%"} marginTop={3} md={3}>
                         <TextField
                           onChange={(ev) => {
                             let _state = state.jobHistory;
@@ -365,8 +370,9 @@ function App(props: Props) {
 
                   {state?.eduction.map((hist, i) => (
                     <Grid container>
-                      <Grid marginTop={4} md={2}>
+                      <Grid width={"100%"} marginTop={4} md={2}>
                         <TextField
+                          fullWidth
                           onChange={(ev) => {
                             let _state = state.eduction;
                             _state[i].from = ev.target.value;
@@ -378,8 +384,9 @@ function App(props: Props) {
                           defaultValue={hist.from}
                         />
                       </Grid>
-                      <Grid marginTop={4} md={2}>
+                      <Grid width={"100%"} marginTop={4} md={2}>
                         <TextField
+                          fullWidth
                           onChange={(ev) => {
                             let _state = state.eduction;
                             _state[i].to = ev.target.value;
@@ -391,7 +398,7 @@ function App(props: Props) {
                           defaultValue={hist.to}
                         />
                       </Grid>
-                      <Grid marginTop={3} md={4}>
+                      <Grid width={"100%"} marginTop={3} md={4}>
                         <TextField
                           onChange={(ev) => {
                             let _state = state.eduction;
@@ -405,7 +412,7 @@ function App(props: Props) {
                           defaultValue={hist.title}
                         />
                       </Grid>
-                      <Grid marginTop={3} md={3}>
+                      <Grid width={"100%"} marginTop={3} md={3}>
                         <TextField
                           onChange={(ev) => {
                             let _state = state.eduction;
@@ -448,14 +455,15 @@ function App(props: Props) {
                 <Grid container marginTop={5}>
                   <Grid display={"flex"} md={12}>
                     <StarsRoundedIcon />
-                    <Grid marginLeft={2}>
+                    <Grid width={"100%"} marginLeft={2}>
                       <Typography fontWeight={700}>Kentnisse</Typography>
                       <Typography>Welche fachlichen und sozialen Fähigkeiten bringst du mit:</Typography>
                     </Grid>
                   </Grid>
-                  <Grid marginTop={3} md={12}>
+                  <Grid width={"100%"} marginTop={3} md={12}>
                     <Autocomplete
                       multiple
+                      fullWidth
                       id="tags-filled"
                       options={top100Films.map((option) => option.title)}
                       value={state.experiance}
@@ -470,7 +478,7 @@ function App(props: Props) {
                 <Grid container marginTop={5}>
                   <Grid display="flex" md={12}>
                     <WorkspacePremiumRoundedIcon />
-                    <Grid marginLeft={2}>
+                    <Grid width={"100%"} marginLeft={2}>
                       <Typography fontWeight={700}>Kurse</Typography>
                       <Typography>Was waren Deine wichtigsten Kurse die du absolviert hast:</Typography>
                     </Grid>
@@ -478,7 +486,7 @@ function App(props: Props) {
 
                   {state.courses?.map((course, i) => (
                     <Grid container>
-                      <Grid marginTop={4} md={4}>
+                      <Grid width={"100%"} marginTop={4} md={4}>
                         <TextField
                           onChange={(ev) => {
                             let _state = state.courses;
@@ -494,7 +502,7 @@ function App(props: Props) {
                           defaultValue=""
                         />
                       </Grid>
-                      <Grid marginTop={3} md={7}>
+                      <Grid width={"100%"} marginTop={3} md={7}>
                         <TextField
                           onChange={(ev) => {
                             let _state = state.courses;
